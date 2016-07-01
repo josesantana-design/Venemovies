@@ -1,0 +1,269 @@
+///////////////////////////////////////////////////////////
+///////////////////////   LAYOUT ///////////////////////
+//////////////////////////////////////////////////////////
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - SIDEBAR
+-------------------------------------------------*/
+
+// ========= sidebar ========= //
+.sidebar  {
+	 position: fixed;
+	background-color:  $color-main-1;
+	height:  $height-full;
+	left:  -230px;
+	transition: transform .3s ease-in-out;
+	width:  230px;
+ 	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+ 	z-index: 1;
+  	top: 0;
+  	overflow-x: auto; 
+}
+
+// ========= sidebar logo ========= //
+.sidebar-logo {
+	border-bottom:  1px solid  mix($color-main-1, #fff, 80%);
+	padding:  $padding * 2;
+	text-align:  center;
+	img {
+		width:  150px;
+	}
+	h3 {
+		color:  #fff;
+		font-weight:  600;
+	}
+}
+
+// ========= sidebar nav ========= //
+.sidebar-nav {
+	a {
+		align-items: center;
+		color:  #fff;
+		display:  flex;
+		font-size: 1em;
+		font-weight: bold;
+		padding: $padding;
+		transition:  .2s ease;
+		&:hover {
+			background-color: mix($color-main-1, #fff, 95%);
+			border-left:  5px solid #fff;
+		}
+		span {
+			 font-size: 1.5em;
+   			margin-right: 0.8em;
+		}
+	}
+}
+
+// ========= sidebar toggle ========= //
+.sidebar-toggle {
+	border-radius: 4px;
+	color: $color-main-1;
+	cursor: pointer;
+	display: block;
+	font-size:  2em;
+	left: 15px;
+	position: absolute;
+	top: 30px;
+	transition: transform .3s ease-in-out;
+}
+
+// ========= sidebar checkbox ========= //
+.sidebar-checkbox{
+	display:  none;
+}
+
+// ========= sidebar checkbox:checked ========= //
+.sidebar-checkbox:checked ~ .sidebar,
+.sidebar-checkbox:checked ~ .wrap,
+.sidebar-checkbox:checked ~ .sidebar-toggle { 
+    transform: translateX(230px);
+}
+
+// ========= sidebar footer ========= //
+.sidebar-footer {
+	position: absolute;
+    	 align-items: center;
+    	 font-size: 0.8em;
+    	 font-weight: bold;
+    	 justify-content: center;
+    	background: #fff;
+    	bottom: 0;
+    	color:  $color-main-1;
+    	display: flex;
+    	padding: 1em;
+    	width: 208px;
+    	 img {
+    	 	height: 20px;
+    	 	margin-right: 1em;
+    	 	width: 20px;
+    	 }
+}
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - NAVBAR
+-------------------------------------------------*/
+
+// =========  wrap ========= //
+.wrap {
+	position: relative;
+    	width: 100%;
+    	transition: transform .3s ease-in-out;
+}
+
+// ========= navbar site ========= //
+.navbar-site {
+	align-items: center;
+	background-color: $color-background-1;
+	box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.058), 0px 0px 5px 1px rgba(0, 0, 0, 0.054);
+	display:  flex;
+	padding-top: $padding * 2;
+	padding-bottom: $padding * 2;
+}
+
+// ========= navbar site content ========= //
+.navbar-site-content {
+	align-items: center;
+	display:  flex;
+	justify-content:  space-between;
+	width: 100%;
+}
+
+// ========= navbar search ========= //
+.navbar-search {
+	padding-left: 2em;
+	input {
+		background: url('../images/search.png') no-repeat 130px;
+		border-radius:  25px;
+		border:  1px solid $color-text-1-f;
+		color:  $color-text-1-e;
+		height:  25px;
+		outline: none;
+		padding-left:  $padding;
+		transition: all .2s;
+		width: 140px;
+		&:focus {
+			border:  1px solid $color-text-1-e;
+			width: 150px;
+		}
+	}
+}
+
+// ========= navbar redes ========= //
+.navbar-redes {
+	display: flex;
+	justify-content:  space-between;
+	width:  100px;
+	a  {
+		color:  $color-text-1-f;
+		font-size: 1.8em;
+		&:hover {
+			color: $color-main-1;
+		}
+	}	
+}
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - MOVIES
+-------------------------------------------------*/
+
+// ========= movies ========= //
+.movies {
+	padding-bottom: 2em;
+}
+
+// ========= movies items========= //
+.movies-items {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+
+// ========= movie ========= //
+.movie{
+	background-color: #fff;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+	box-sizing: border-box;
+	margin-top: 2em;
+	padding: $padding * 2;
+	width: 440px;
+}
+
+// ========= movie content========= //
+.movie-content {
+	display: flex;
+	padding-bottom: 2em;
+	img {
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+		height: 210px;
+		margin-right: 2em;
+		width: 150px;
+	}
+	.description {
+		padding: $padding 0;
+		a {
+			color: $color-main-2;
+			cursor: pointer;
+			font-size: 1.2em;
+			font-weight: 600;
+			margin-bottom:  1em;
+			margin-top: 1em;
+		}
+		h5 {
+			color: $color-text-1-g;
+			margin-bottom:  1em;
+			margin-top:  1em;
+		}
+		img {
+			box-shadow: none;
+			height: 30px;
+			margin-bottom: 1em;
+			width: 100px;
+		}
+		p {
+			color: $color-text-1-g;
+			line-height: 18px;
+		}
+	}
+}
+
+// ========= movie footer========= //
+.movie-footer {
+	border-top: 1px solid $color-text-1-f;
+	padding-top: 1em;
+    	align-items: center;
+    	display: flex;
+    	justify-content: space-between;
+    	margin-bottom: -1em;
+    	.actors {
+    		display: flex;
+    		align-items: center;
+    		img {
+    			margin-right: 0.5em;
+    		}
+    		p {
+    			margin-left: 0.5em;
+    			color: $color-text-1-g;
+    		}
+    	}
+
+    	.likes {
+    		align-items: center;
+    		color: $color-text-1-g;
+    		display: flex;
+    		span {
+    			cursor: pointer;
+    			font-size: 1.5em;
+    			margin-right:  0.5em;
+    			padding-top: 5px;
+    			&:hover {
+    				color:  $color-main-2;
+    			}
+    		}
+    	}
+}
+
+// ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■  Fin de estilos  ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ 
+

@@ -1,0 +1,29 @@
+/* ------------------------------------------------------------------------------------------------------------------
+Version: 0.1
+
+VENEMOVIES [Estilos CSS]
+Reference: http://venemovies.com/
+
+Categorias:
+1. Base  - Elementos por defaults, atributos selectores, pseudo-class  [ejemplo: body, form, a]
+2. Layout  - Divide la pagina en secciones [ejemplo: header, footer]
+3. Modules - Reusable, Partes modulares del diseño [ejemplo: sidebar, popup]
+4. State - Estados particulares para nuestro layout y modules [ejemplo: expanded, active]
+5. Theme - Diferentes estilos para nuestra web [ejemplo: dark, light]
+6. Pages   - Estilosespecificos para paginas. [prefix: page-]
+------------------------------------------------------------------------------------------------------------------ */
+
+
+//////////////////////////////////////////////////////////////////
+/////////////  VENEMOVIES: MASTER ///////////////////////////
+////////////////////////////////////////////////////////////////
+
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "base";
+
+@import "modules/_container";
+
+@import "layout";
+

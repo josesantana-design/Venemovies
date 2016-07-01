@@ -1,0 +1,371 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------------------------------------------------------------
+Version: 0.1
+
+VENEMOVIES [Estilos CSS]
+Reference: http://venemovies.com/
+
+Categorias:
+1. Base  - Elementos por defaults, atributos selectores, pseudo-class  [ejemplo: body, form, a]
+2. Layout  - Divide la pagina en secciones [ejemplo: header, footer]
+3. Modules - Reusable, Partes modulares del diseño [ejemplo: sidebar, popup]
+4. State - Estados particulares para nuestro layout y modules [ejemplo: expanded, active]
+5. Theme - Diferentes estilos para nuestra web [ejemplo: dark, light]
+6. Pages   - Estilosespecificos para paginas. [prefix: page-]
+------------------------------------------------------------------------------------------------------------------ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #f7f7f7;
+  color: #7e8998;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px; }
+
+a {
+  color: #536876;
+  text-decoration: none; }
+
+a:hover {
+  color: #2f4656; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #203442; }
+
+h1 {
+  font-size: 2.25em; }
+
+h2 {
+  font-size: 1.875em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h4 {
+  font-size: 1.125em; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  font-size: 0.75em; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #d3dbe3; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #d3dbe3; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #d3dbe3; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #d3dbe3; }
+
+.container {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - SIDEBAR
+-------------------------------------------------*/
+.sidebar {
+  position: fixed;
+  background-color: #1460ab;
+  height: 100%;
+  left: -230px;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition: transform .3s ease-in-out;
+  width: 230px;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+  z-index: 1;
+  top: 0;
+  overflow-x: auto; }
+
+.sidebar-logo {
+  border-bottom: 1px solid #4380bc;
+  padding: 2em;
+  text-align: center; }
+  .sidebar-logo img {
+    width: 150px; }
+  .sidebar-logo h3 {
+    color: #fff;
+    font-weight: 600; }
+
+.sidebar-nav a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 1em;
+  -webkit-transition: .2s ease;
+          transition: .2s ease; }
+  .sidebar-nav a:hover {
+    background-color: #2068af;
+    border-left: 5px solid #fff; }
+  .sidebar-nav a span {
+    font-size: 1.5em;
+    margin-right: 0.8em; }
+
+.sidebar-toggle {
+  border-radius: 4px;
+  color: #1460ab;
+  cursor: pointer;
+  display: block;
+  font-size: 2em;
+  left: 15px;
+  position: absolute;
+  top: 30px;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition: transform .3s ease-in-out; }
+
+.sidebar-checkbox {
+  display: none; }
+
+.sidebar-checkbox:checked ~ .sidebar,
+.sidebar-checkbox:checked ~ .wrap,
+.sidebar-checkbox:checked ~ .sidebar-toggle {
+  -webkit-transform: translateX(230px);
+          transform: translateX(230px); }
+
+.sidebar-footer {
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #fff;
+  bottom: 0;
+  color: #1460ab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1em;
+  width: 208px; }
+  .sidebar-footer img {
+    height: 20px;
+    margin-right: 1em;
+    width: 20px; }
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - NAVBAR
+-------------------------------------------------*/
+.wrap {
+  position: relative;
+  width: 100%;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+          transition: transform .3s ease-in-out; }
+
+.navbar-site {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.058), 0px 0px 5px 1px rgba(0, 0, 0, 0.054);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 2em;
+  padding-bottom: 2em; }
+
+.navbar-site-content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%; }
+
+.navbar-search {
+  padding-left: 2em; }
+  .navbar-search input {
+    background: url("../images/search.png") no-repeat 130px;
+    border-radius: 25px;
+    border: 1px solid #e8edf2;
+    color: #d3dbe3;
+    height: 25px;
+    outline: none;
+    padding-left: 1em;
+    -webkit-transition: all .2s;
+            transition: all .2s;
+    width: 140px; }
+    .navbar-search input:focus {
+      border: 1px solid #d3dbe3;
+      width: 150px; }
+
+.navbar-redes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100px; }
+  .navbar-redes a {
+    color: #e8edf2;
+    font-size: 1.8em; }
+    .navbar-redes a:hover {
+      color: #1460ab; }
+
+/*-------------------------------------------------
+VENEMOVIES: LAYOUT - MOVIES
+-------------------------------------------------*/
+.movies {
+  padding-bottom: 2em; }
+
+.movies-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.movie {
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  margin-top: 2em;
+  padding: 2em;
+  width: 440px; }
+
+.movie-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 2em; }
+  .movie-content img {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    height: 210px;
+    margin-right: 2em;
+    width: 150px; }
+  .movie-content .description {
+    padding: 1em 0; }
+    .movie-content .description a {
+      color: #c42b3d;
+      cursor: pointer;
+      font-size: 1.2em;
+      font-weight: 600;
+      margin-bottom: 1em;
+      margin-top: 1em; }
+    .movie-content .description h5 {
+      color: #afafaf;
+      margin-bottom: 1em;
+      margin-top: 1em; }
+    .movie-content .description img {
+      box-shadow: none;
+      height: 30px;
+      margin-bottom: 1em;
+      width: 100px; }
+    .movie-content .description p {
+      color: #afafaf;
+      line-height: 18px; }
+
+.movie-footer {
+  border-top: 1px solid #e8edf2;
+  padding-top: 1em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: -1em; }
+  .movie-footer .actors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .movie-footer .actors img {
+      margin-right: 0.5em; }
+    .movie-footer .actors p {
+      margin-left: 0.5em;
+      color: #afafaf; }
+  .movie-footer .likes {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #afafaf;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .movie-footer .likes span {
+      cursor: pointer;
+      font-size: 1.5em;
+      margin-right: 0.5em;
+      padding-top: 5px; }
+      .movie-footer .likes span:hover {
+        color: #c42b3d; }
