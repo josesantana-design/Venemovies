@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html  ng-app="venemoviesApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,85 +53,41 @@
  		<label  class="sidebar-toggle" for="slide-sidebar"><span class="icon-bars" ></span></label>
 		
 		<!--Movies -->
-		<div class="movies">
-			<div class="movies-items">
-				<div class="movie">
+		<div class="movies" ng-controller="mainCtrl">
+			<div class="movies-items" >
+				<div class="movie" ng-repeat="movie in movies">
 					<div class="movie-content">
-						<img src="images/01.png" alt="">
+						<img src="images/poster/{{ movie.titulo }}.png" alt="">
 						<div class="description">
-							<a href="">Malefica</a>
-							<h5>Fantasia</h5>
-							<img src="images/start_3.svg" alt="">
-							<p>Malefica es una pelicula de fantasia basada en la malvada hada y bruja de la bella durmiente..</p>
+							<a href="{{movie.link}}">{{ movie.titulo }}</a>
+							<h5>{{ movie.genero }}</h5>
+							<img src="images/calificacion/{{ movie.calificacion }}.svg" alt="">
+							<p>{{ movie.descripcion }}</p>
 						</div>
 					</div>
 					<div class="movie-footer">
 						<div class="actors">
-							<img src="images/actor_1.png" alt="">
-							<img src="images/actor_2.png" alt="">
-							<img src="images/actor_3.png" alt="">
+							<img src="images/actores/{{ movie.actor1 }}.png" alt="">
+							<img src="images/actores/{{ movie.actor2 }}.png" alt="">
+							<img src="images/actores/{{ movie.actor3  }}.png" alt="">
 							<p>Actores</p>
 						</div>
 						<div class="likes">
 							<span class="icon-favoritas-1"></span>
-							<p>45 Likes</p>
+							<p>{{ movie.likes }}</p>
 						</div>
 					</div>
 				</div><!--Fin de movie -->
 
-				<div class="movie">
-					<div class="movie-content">
-						<img src="images/03.png" alt="">
-						<div class="description">
-							<a href="">Mi villano favorito</a>
-							<h5>Aventura</h5>
-							<img src="images/start_4.svg" alt="">
-							<p>Hay caos en el egipto la gran piramide de Guiza fue robada y remplazada por una replica inflalible todo por culpa de un malvado...</p>
-						</div>
-					</div>
-					<div class="movie-footer">
-						<div class="actors">
-							<img src="images/actor_4.png" alt="">
-							<img src="images/actor_5.png" alt="">
-							<img src="images/actor_6.png" alt="">
-							<p>Actores</p>
-						</div>
-						<div class="likes">
-							<span class="icon-favoritas-1"></span>
-							<p>78 Likes</p>
-						</div>
-					</div>
-				</div><!--Fin de movie -->
-
-				<div class="movie">
-					<div class="movie-content">
-						<img src="images/02.png" alt="">
-						<div class="description">
-							<a href="">Mi villano favorito 2</a>
-							<h5>Aventura</h5>
-							<img src="images/start_4.svg" alt="">
-							<p>Un vehiculo misterioso usando un enorme iman roba un mutageno muy potente conocido como PX-41 de un laboratorio secreto</p>
-						</div>
-					</div>
-					<div class="movie-footer">
-						<div class="actors">
-							<img src="images/actor_4.png" alt="">
-							<img src="images/actor_5.png" alt="">
-							<img src="images/actor_6.png" alt="">
-							<p>Actores</p>
-						</div>
-						<div class="likes">
-							<span class="icon-favoritas-1"></span>
-							<p>80 Likes</p>
-						</div>
-					</div>
-				</div><!--Fin de movie -->
 			</div>
 		</div>
  	</div><!--Fin de movies -->
  
 
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/2.0.0-beta.17/router.min.js" type="text/javascript"></script>
     <!-- JS files -->
-    <script src="js/application.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/application.js" type="text/javascript"></script>
 </body>
 </html>

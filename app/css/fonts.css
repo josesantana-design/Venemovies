@@ -62,3 +62,6 @@
 .icon-twitter:before {
   content: "\68";
 }
+.icon-cancel:before {
+  content: "\69";
+}

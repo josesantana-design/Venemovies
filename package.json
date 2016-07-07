@@ -1,9 +1,9 @@
 {
-    "name": "santUi",
+    "name": "Venemovies",
     "version": "0.0.1",
-    "description": "Application description goes here",
-    "licenses": "enter your license type here",
-    "repository": "your repository url goes here",
+    "description": "Application dedicada a descargas de peliculas",
+    "licenses": "",
+    "repository": "Venemovies",
     "devDependencies": {
         "gulp": "~3.9.0",
         "gulp-sass": "~2.1.1",
